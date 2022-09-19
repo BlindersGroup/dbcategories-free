@@ -202,7 +202,7 @@ class Dbcategories extends Module
         if ( !empty($selected_categories) )
             $selected_categories = explode(',',$selected_categories);
         
-        if(count($selected_categories) > 0) {
+        if(is_array($selected_categories) && count($selected_categories) > 0) {
             foreach ($selected_categories as $id_category) {
                 if(!in_array($id_category, $exclude_categories)) {
                     $category = new Category($id_category, $id_lang);
